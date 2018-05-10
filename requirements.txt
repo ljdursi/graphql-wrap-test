@@ -1,0 +1,4 @@
+requests
+graphene
+flask
+flask_graphql
