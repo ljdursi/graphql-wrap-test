@@ -26,6 +26,30 @@ Getting variants linked to an individual
 }
 ```
 
+and you'll get something like:
+```
+{
+  "data": {
+    "oneindividual": {
+      "id": "WyIxa2dlbm9tZXMiLCJpIiwiSEcwMDI1NSJd",
+      "name": "HG00255",
+      "variants": [
+        {
+          "names": [
+            "rs376342519"
+          ]
+        },
+        {
+          "names": [
+            "rs531730856"
+          ]
+        },
+        {
+          "names": [
+            "rs546169444"
+...
+```
+
 Getting individual fields linked to a variant:
 
 ```
@@ -33,11 +57,50 @@ Getting individual fields linked to a variant:
   variants(start:"1", end:"100000") {
     names,
     calls {
-        individual {
-            name,
-            description
-      }
+      individual {
+        name,
+        description
+     }
     }
   }
 }
+```
+
+and you'll get:
+```
+{
+  "data": {
+    "variants": [
+      {
+        "names": [
+          "rs367896724"
+        ],
+        "calls": [
+          {
+            "individual": {
+              "name": "HG00530",
+              "description": "CHS"
+            }
+          },
+          {
+            "individual": {
+              "name": "HG00306",
+              "description": "FIN"
+            }
+          },
+          {
+            "individual": {
+              "name": "HG00308",
+              "description": "FIN"
+            }
+          },
+          {
+            "individual": {
+              "name": "HG00155",
+              "description": "GBR"
+            }
+          }
+        ]
+      },
+...
 ```
